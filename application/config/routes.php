@@ -56,6 +56,7 @@ $route['admin/login'] 			= 'admin/login';
 $route['admin/change-pass'] 	= 'admin/dashboard/changePass';
 $route['admin/video-setting'] 	= 'admin/dashboard/video';
 $route['admin/staff'] 			= 'admin/dashboard/staff';
+$route['admin/setting'] 			= 'admin/dashboard/setting';
 $route['admin/staff/ajax'] = 'admin/dashboard/ajax_staff';
 $route['404_override'] 			= '';
 $route['translate_uri_dashes'] = FALSE;

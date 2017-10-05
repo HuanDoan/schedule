@@ -74,7 +74,7 @@
 
         <div class="col-md-4 col_right">
             <div class="video">
-                <iframe width="100%" height="395" src="https://www.youtube.com/embed/RZ4NMweaUcQ" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="395" src="https://www.youtube.com/embed/<?=$VideoLink?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="bg-white noti">
                 <div class="row">

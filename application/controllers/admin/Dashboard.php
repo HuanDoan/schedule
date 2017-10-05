@@ -55,6 +55,10 @@ class Dashboard extends Admin_Controller {
     	$this->render('layout_admin/video_view');
     }
 
+    public function setting(){
+        $this->render('layout_admin/setting_view');
+    }
+
     public function staff(){
     	$this->load->model('mstaff');
     	if ($this->input->post()) {
