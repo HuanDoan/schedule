@@ -3,13 +3,10 @@ body
     background-color: darkgray;
 }
 
-.container{
-    margin: 15px;
-    padding: 0;
+.bg-white{
+    background-color: #fff;
 }
-
 .slider{
-    margin-left: 0px;
     margin-bottom: 15px;
 }
 
@@ -20,8 +17,7 @@ body
     height: 65px;
 }
 
-.col_left .title_time{
-    color: black;
+.title_t{
     text-align: center;
     margin-bottom: 1px;
 }
@@ -29,9 +25,70 @@ body
 .col_left .style_table
 {
     width: 100%;
-    background-color: #fff;
 }
- .col_right
- {
-     display: inline;
- }
+
+table {
+    width: 100%;
+}
+
+tbody { display: block; }
+tbody {
+    height: 724px;
+    overflow-y: auto;
+}
+
+.col_right
+{
+     margin-left: 0;
+     padding-left: 0;
+}
+
+.col_right .video
+{
+    margin-bottom: 15px;
+}
+
+.col_right .noti{
+    height: 385px;
+}
+
+.col_right .noti .noti_titile{
+    margin-left: 15px;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px #000;
+}
+
+.col_right .noti .line_hr{
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+}
+
+.col_right .noti .noti_text{
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+.col_right .noti .noti_text a{
+    margin-bottom: 15px;
+}
+.col_right .noti .noti_text ul{
+    list-style: none;
+}
+
+.col_right .noti .noti_text li{
+    margin-bottom: 15px;
+}
+
+.footer_body{
+    width: 100%;
+    height: 65px;
+    margin-top: 15px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.marquee {
+    overflow: hidden;
+}
