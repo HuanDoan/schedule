@@ -36,6 +36,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
     <script src="<?=base_url()?>/assets/admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    
 </head>
 
 <body class="fix-header">

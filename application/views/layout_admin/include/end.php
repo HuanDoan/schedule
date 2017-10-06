@@ -28,6 +28,7 @@
     <script src="<?=base_url()?>/assets/admin/js/custom.min.js"></script>
     <script src="<?=base_url()?>/assets/admin/js/dashboard1.js"></script>
     <script src="<?=base_url()?>/assets/admin/plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+    <script src="<?=base_url()?>/assets/admin/js/jquery.form.min.js"></script>
 </body>
 
 </html>

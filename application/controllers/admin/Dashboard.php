@@ -56,6 +56,9 @@ class Dashboard extends Admin_Controller {
     }
 
     public function setting(){
+        $this->load->model('msetting');
+        $path = $this->msetting->getLastestBanner();
+        $this->data['BannerLink'] = base_url().'/assets/users/files/'.$path;
         $this->render('layout_admin/setting_view');
     }
 
@@ -109,5 +112,50 @@ class Dashboard extends Admin_Controller {
     		}
 
     	}
+    }
+
+    public function ajax_setting(){
+        $this->load->model('msetting');
+
+        if ($this->input->post()) {
+            $option = $this->input->post('option');
+
+            $status = '';
+            $err    = '';
+            $file_element_name = 'file';
+
+            if ($option == 'uploadBanner') {
+                $image_path = './assets/users/files';
+                $config['upload_path'] = $image_path;
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size'] = 1024 * 8;
+                $config['encrypt_name'] = TRUE;
+
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+
+                if (!$this->upload->do_upload($file_element_name)) {
+                    $status = 'error';
+                    $err    = $this->upload->display_errors('', '');
+                }
+                else{
+                    $data     = $this->upload->data();
+                    $fileName = $data['file_name'];
+                    $file_id  = $this->msetting->insertBanner($fileName);
+
+                    if ($file_id) {
+                        $status = 'success';
+                        $err    = 'File successfully uploaded';
+                    }
+                    else{
+                        unlink($data['full_path']);
+                        $status = 'error';
+                        $err    = 'Something went wrong when saving the file, please try again.';
+                    }
+                }
+                echo json_encode(array('status' => $status, 'err' => $err));
+                die();
+            }
+        }
     }
 }

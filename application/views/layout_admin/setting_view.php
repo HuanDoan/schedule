@@ -31,21 +31,21 @@
                                 <span><?=$this->session->success_msg;?></span>
                             </div>
                             <?php endif;?>
-                            <form method="post" class="form-horizontal form-material">
+                            <form method="post" class="form-horizontal form-material" id="FileUploadForm">
                                 <div class="form-group">
                                     
                                     <div class="col-md-12">
-                                        <input type="file" name="file" id="File" class="form-control form-control-line" required> 
+                                        <input type="file" name="file" id="File" class="form-control form-control-line" required accept="image/x-png,image/gif,image/jpeg"> 
                                     </div>
                                 </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40% Complete (success)</span>
+                                <div id="ProgressBarWrap" class="progress" style="display: none;">
+                                    <div id="ProgressBar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <span class="sr-only">40%</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button type="button" id="Upload" class="btn btn-success">Upload</button>
+                                        <button id="Upload" class="btn btn-success">Upload</button>
                                     </div>
                                 </div>
                             </form>
@@ -56,7 +56,7 @@
                         <div class="white-box">
                             <h3 class="box-title">Current Banner</h3>
                             <div class="img-preview">
-                                <img src="http://localhost/schedule/assets/web/img/pic1.jpg">
+                                <img src="<?=$BannerLink?>">
                             </div>
                         </div>
                     </div>
@@ -75,6 +75,31 @@
         <!-- ============================================================== -->
         <script>
             $(document).ready(function(){
-
+                $('#FileUploadForm').submit(function(e){
+                        e.preventDefault();
+                        $('#ProgressBarWrap').fadeIn();
+                        $(this).ajaxSubmit({
+                            url             : '<?=base_url()?>admin/setting/ajax',
+                            dataType        : 'json',
+                            data            : {
+                                'option'    : 'uploadBanner'
+                            },
+                            uploadProgress  : function(event, position, total, percentComplete){
+                                if (percentComplete == 100) {
+                                    $('#ProgressBar span').html('Processing...');
+                                    $('#ProgressBar').css('width', percentComplete+'%');
+                                }
+                                else{
+                                    $('#ProgressBar span').html(percentComplete+'%');
+                                    $('#ProgressBar').css('width', percentComplete+'%');
+                                }
+                            },
+                            success         : function(data, status){
+                                alert(data.err);
+                                window.location.href=window.location.href;
+                            } 
+                        });
+                    
+                });
             });
         </script>

@@ -14,6 +14,9 @@ class Homepage extends Public_Controller
 	public function index()
 	{
 		$this->load->model('mvideo');
+		$this->load->model('msetting');
+		$path = $this->msetting->getLastestBanner();
+        $this->data['BannerLink'] = base_url().'/assets/users/files/'.$path;
 		$this->data['Page_title'] = 'Homepage';
 
 		$this->data['VideoLink'] = $this->mvideo->getLatestVideo();

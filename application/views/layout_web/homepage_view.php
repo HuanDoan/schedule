@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="slider">
-                <img style="width: 1890px; height: 183px" class="item" src="<?=base_url()?>assets/web/img/pic1.jpg" alt="pic">
+                <img style="width: 1890px; height: 183px" class="item" src="<?=$BannerLink?>" alt="pic">
             </div>
         </div>
     </div>
