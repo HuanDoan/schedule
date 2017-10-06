@@ -401,7 +401,7 @@
         //requires jQuery easing plugin. Default is 'linear'
         easing: 'linear',
         //pause time before the next animation turn in milliseconds
-        delayBeforeStart: 1000,
+        delayBeforeStart: 0,
         //'left', 'right', 'up' or 'down'
         direction: 'left',
         //true or false - should the marquee be duplicated to show an effect of continues flow
@@ -422,11 +422,11 @@ $('.marquee').marquee({
     //speed in milliseconds of the marquee
     duration: 10000,
     //gap in pixels between the tickers
-    gap: 500,
+    gap: 100,
     //time in milliseconds before the marquee will start animating
-    delayBeforeStart: 0,
+    delayBeforeStart: 1000,
     //'left' or 'right'
     direction: 'left',
     //true or false - should the marquee be duplicated to show an effect of continues flow
-    duplicated: true
+    duplicated: true,
 });
