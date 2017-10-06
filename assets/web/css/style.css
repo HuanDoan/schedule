@@ -91,4 +91,5 @@ tbody {
 
 .marquee {
     overflow: hidden;
+    width: 100%;
 }
