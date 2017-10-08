@@ -9,68 +9,56 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Dashboard</h4> </div>
+                        <h4 class="page-title">Schedule</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Schedule</a></li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
-                <!-- ============================================================== -->
-                <!-- Different data widgets -->
-                <!-- ============================================================== -->
-                <!-- .row -->
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Visit</h3>
-                            <ul class="list-inline two-part">
-                                <li>
-                                    <div id="sparklinedash"></div>
-                                </li>
-                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">659</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Page Views</h3>
-                            <ul class="list-inline two-part">
-                                <li>
-                                    <div id="sparklinedash2"></div>
-                                </li>
-                                <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">869</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Unique Visitor</h3>
-                            <ul class="list-inline two-part">
-                                <li>
-                                    <div id="sparklinedash3"></div>
-                                </li>
-                                <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">911</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!--/.row -->
-                <!--row -->
-                <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="col-xs-12">
                         <div class="white-box">
-                            <h3 class="box-title">Products Yearly Sales</h3>
-                            <ul class="list-inline text-right">
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Mac</h5> </li>
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-inverse"></i>Windows</h5> </li>
-                            </ul>
-                            <div id="ct-visits" style="height: 405px;"></div>
+                            <h3>Kế hoạch mới</h3>
+                            <form method="post" class="form-horizontal form-material" id="newSchedule" action="<?=base_url()?>admin/schedule">
+                                <div class="row">
+                                    <div class="col-xs-2">
+                                        <div class="form-group">
+                                            <label class="col-xs-12">Ngày</label>
+                                            <div class="col-xs-12">
+                                                <input type="text" class="form-control" required name="date" id="inpDate" placeholder="01/01/2017">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-10 job-container">
+                                        <div class="row jobwrap">
+                                            <div class="col-xs-8">
+                                                <div class="form-group">
+                                                    <label class="col-xs-12">Công việc</label>
+                                                    <div class="col-xs-12">
+                                                        <input type="text" class="form-control" required name="job" id="inpJob" placeholder="Công việc">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <div class="form-group">
+                                                    <label class="col-xs-12">Staff</label>
+                                                    <div class="col-xs-12">
+                                                        <select class="form-control" id="sltJob">
+                                                            <?php foreach($staff as $r) : ?>
+                                                            <option value="<?=$r->ID?>"><?=$r->StaffName?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" id="btnSaveJob" class="btn btn-success">Save</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -80,184 +68,24 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
-                            <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
-                                <select class="form-control pull-right row b-none">
-                                    <option>March 2017</option>
-                                    <option>April 2017</option>
-                                    <option>May 2017</option>
-                                    <option>June 2017</option>
-                                    <option>July 2017</option>
-                                </select>
-                            </div>
-                            <h3 class="box-title">Recent sales</h3>
+                            <h3 class="box-title">Job list</h3>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-bordered" id="jobTable">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>NAME</th>
-                                            <th>STATUS</th>
-                                            <th>DATE</th>
-                                            <th>PRICE</th>
+                                            <td width="200">Ngày</td>
+                                            <td>Công việc</td>
+                                            <td>Staff</td>
+                                            <td>Action</td>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="txt-oflo">Elite admin</td>
-                                            <td>SALE</td>
-                                            <td class="txt-oflo">April 18, 2017</td>
-                                            <td><span class="text-success">$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td class="txt-oflo">Real Homes WP Theme</td>
-                                            <td>EXTENDED</td>
-                                            <td class="txt-oflo">April 19, 2017</td>
-                                            <td><span class="text-info">$1250</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td class="txt-oflo">Ample Admin</td>
-                                            <td>EXTENDED</td>
-                                            <td class="txt-oflo">April 19, 2017</td>
-                                            <td><span class="text-info">$1250</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td class="txt-oflo">Medical Pro WP Theme</td>
-                                            <td>TAX</td>
-                                            <td class="txt-oflo">April 20, 2017</td>
-                                            <td><span class="text-danger">-$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td class="txt-oflo">Hosting press html</td>
-                                            <td>SALE</td>
-                                            <td class="txt-oflo">April 21, 2017</td>
-                                            <td><span class="text-success">$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td class="txt-oflo">Digital Agency PSD</td>
-                                            <td>SALE</td>
-                                            <td class="txt-oflo">April 23, 2017</td>
-                                            <td><span class="text-danger">-$14</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td class="txt-oflo">Helping Hands WP Theme</td>
-                                            <td>MEMBER</td>
-                                            <td class="txt-oflo">April 22, 2017</td>
-                                            <td><span class="text-success">$64</span></td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- chat-listing & recent comments -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- .col -->
-                    <div class="col-md-12 col-lg-8 col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Recent Comments</h3>
-                            <div class="comment-center p-t-10">
-                                <div class="comment-body">
-                                    <div class="user-img"> <img src="<?=base_url()?>/assets/admin/plugins/images/users/pawandeep.jpg" alt="user" class="img-circle">
-                                    </div>
-                                    <div class="mail-contnet">
-                                        <h5>Pavan kumar</h5><span class="time">10:20 AM   20  may 2016</span>
-                                        <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span> <a href="javacript:void(0)" class="btn btn btn-rounded btn-default btn-outline m-r-5"><i class="ti-check text-success m-r-5"></i>Approve</a><a href="javacript:void(0)" class="btn-rounded btn btn-default btn-outline"><i class="ti-close text-danger m-r-5"></i> Reject</a>
-                                    </div>
-                                </div>
-                                <div class="comment-body">
-                                    <div class="user-img"> <img src="<?=base_url()?>/assets/admin/plugins/images/users/sonu.jpg" alt="user" class="img-circle">
-                                    </div>
-                                    <div class="mail-contnet">
-                                        <h5>Sonu Nigam</h5><span class="time">10:20 AM   20  may 2016</span>
-                                        <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span>
-                                    </div>
-                                </div>
-                                <div class="comment-body b-none">
-                                    <div class="user-img"> <img src="<?=base_url()?>/assets/admin/plugins/images/users/arijit.jpg" alt="user" class="img-circle">
-                                    </div>
-                                    <div class="mail-contnet">
-                                        <h5>Arijit singh</h5><span class="time">10:20 AM   20  may 2016</span>
-                                        <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="panel">
-                            <div class="sk-chat-widgets">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        CHAT LISTING
-                                    </div>
-                                    <div class="panel-body">
-                                        <ul class="chatonline">
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success btn-circle btn-lg" type="button"><i class="fa fa-phone"></i></button>
-                                                    <button class="btn btn-info btn-circle btn-lg" type="button"><i class="fa fa-comments-o"></i></button>
-                                                </div>
-                                                <a href="javascript:void(0)"><img src="<?=base_url()?>/assets/admin/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success btn-circle btn-lg" type="button"><i class="fa fa-phone"></i></button>
-                                                    <button class="btn btn-info btn-circle btn-lg" type="button"><i class="fa fa-comments-o"></i></button>
-                                                </div>
-                                                <a href="javascript:void(0)"><img src="<?=base_url()?>/assets/admin/plugins/images/users/genu.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success btn-circle btn-lg" type="button"><i class="fa fa-phone"></i></button>
-                                                    <button class="btn btn-info btn-circle btn-lg" type="button"><i class="fa fa-comments-o"></i></button>
-                                                </div>
-                                                <a href="javascript:void(0)"><img src="<?=base_url()?>/assets/admin/plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success btn-circle btn-lg" type="button"><i class="fa fa-phone"></i></button>
-                                                    <button class="btn btn-info btn-circle btn-lg" type="button"><i class="fa fa-comments-o"></i></button>
-                                                </div>
-                                                <a href="javascript:void(0)"><img src="<?=base_url()?>/assets/admin/plugins/images/users/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success btn-circle btn-lg" type="button"><i class="fa fa-phone"></i></button>
-                                                    <button class="btn btn-info btn-circle btn-lg" type="button"><i class="fa fa-comments-o"></i></button>
-                                                </div>
-                                                <a href="javascript:void(0)"><img src="<?=base_url()?>/assets/admin/plugins/images/users/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success btn-circle btn-lg" type="button"><i class="fa fa-phone"></i></button>
-                                                    <button class="btn btn-info btn-circle btn-lg" type="button"><i class="fa fa-comments-o"></i></button>
-                                                </div>
-                                                <a href="javascript:void(0)"><img src="<?=base_url()?>/assets/admin/plugins/images/users/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success btn-circle btn-lg" type="button"><i class="fa fa-phone"></i></button>
-                                                    <button class="btn btn-info btn-circle btn-lg" type="button"><i class="fa fa-comments-o"></i></button>
-                                                </div>
-                                                <a href="javascript:void(0)"><img src="<?=base_url()?>/assets/admin/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
                 </div>
             </div>
             <!-- /.container-fluid -->
@@ -266,4 +94,129 @@
         <!-- ============================================================== -->
         <!-- End Page Content -->
         <!-- ============================================================== -->
+        <script>
+            $('#inpDate').datepicker();
+
+            var AJAX_PATH_URL = '<?=base_url()?>admin/schedule/ajax';
+
+            $(document).ready(function(){
+                fetchTable();
+
+                $('#btnSaveJob').click(function(e){
+                    e.preventDefault();
+                    var date    = $('#inpDate').val();
+                    var job     = $('#inpJob').val();
+                    var staffID = $('#sltJob').val();
+                    if (date == '' || date == null) {
+                        confirm('Bạn chưa nhập ngày!');
+                        $('#inpDate').focus();
+                        return;
+                    }
+                    if (job == '' || job == null) {
+                        confirm('Bạn chưa nhập công việc!');
+                        $('#inpJob').focus();
+                        return;
+                    }
+                    $.post(AJAX_PATH_URL,
+                        {
+                            option  : 'insertJob',
+                            job     : job,
+                            date    : date,
+                            staffID : staffID
+                        },
+                        function(data, success){
+                            data = $.parseJSON(data);
+                            alert(data['msg']);
+                            fetchTable();
+                        }
+                    );
+                });
+            
+
+                function fetchTable(){
+                    var html = '';
+                    var span = '<span style="display: none;">';
+                    var endspan = '</span>';
+
+                    $.post(AJAX_PATH_URL,
+                        {
+                            option: 'fetchTable'
+                        },
+                        function(data){
+                            for (var i = 0; i < data.length; i++) {
+                                var action = '<td width="70" style="text-align:center;" data-value="'+data[i].ID+'"><button class="btn btn-danger">Delete</button></td>';
+                                html += '<tr>';
+                                html += '<td>'+parseDate(data[i].Date)+'</td><td>'+data[i].Content+span+data[i].ID+endspan+'</td><td>'+data[i].StaffName+span+data[i].ID+endspan+'</td>'+action;
+                                html += '</tr>';
+                            }
+                            $('#jobTable tbody').html(html).promise().done(function(){
+                                var $rows = $('#jobTable tbody tr');
+                                var items = [],
+                                    itemtext = [],
+                                    currGroupStartIdx = 0;
+                                $rows.each(function(i) {
+                                    var $this = $(this);
+                                    var itemCell = $(this).find('td:eq(0)')
+                                    var item = itemCell.text();
+                                    itemCell.remove();
+                                    if ($.inArray(item, itemtext) === -1) {
+                                        itemtext.push(item);
+                                        items.push([i, item]);
+                                        groupRowSpan = 1;
+                                        currGroupStartIdx = i;
+                                        $this.data('rowspan', 1)
+                                    } else {
+                                        var rowspan = $rows.eq(currGroupStartIdx).data('rowspan') + 1;
+                                        $rows.eq(currGroupStartIdx).data('rowspan', rowspan);
+                                    }
+
+                                });
+
+
+
+                                $.each(items, function(i) {
+                                    var $row = $rows.eq(this[0]);
+                                    var rowspan = $row.data('rowspan');
+                                    $row.prepend('<td rowspan="' + rowspan + '">' + this[1] + '</td>');
+                                });
+                            });
+                            $('.btn-danger').each(function(){
+                                var _this = $(this);
+                                _this.click(function(){
+                                    deleteJob(_this);
+                                });
+                            });
+                        }
+                    );
+                }
+
+
+
+                function deleteJob(obj){
+                    var id = $(obj).parents('td').attr('data-value');
+                    if (confirm('Bạn muốn xóa công việc này?')) {
+                        $.post(AJAX_PATH_URL,
+                            {
+                                option: 'deleteJob',
+                                id: id
+                            },
+                            function(data){
+                                alert(data.msg);
+                                fetchTable();
+                            }
+                        );
+                    }
+                    else{
+                        return false;
+                    }
+                }
+
+                function parseDate(date){
+                    var d = date.split("-");
+                    d = d[2]+"/"+d[1]+"/"+d[0];
+                    return d;
+                }
+
+            });
+        </script>
     

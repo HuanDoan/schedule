@@ -29,6 +29,7 @@
     <link href="<?=base_url()?>/assets/admin/css/custom.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="<?=base_url()?>/assets/admin/css/colors/default.css" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="<?=base_url()?>assets/admin/css/jquery-ui.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,7 +37,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
     <script src="<?=base_url()?>/assets/admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
-    
+
+    <script src="<?=base_url()?>assets/admin/plugins/ckeditor/ckeditor.js"></script>
+    <script src="<?=base_url()?>assets/admin/js/jquery-ui.min.js"></script>
 </head>
 
 <body class="fix-header">

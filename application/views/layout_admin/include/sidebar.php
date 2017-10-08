@@ -17,7 +17,7 @@
                         <a href="<?=base_url();?>admin/video-setting" class="waves-effect"><i class="fa fa-youtube-play fa-fw" aria-hidden="true"></i>Video setting</a>
                     </li>
                     <li>
-                        <a href="basic-table.html" class="waves-effect"><i class="fa fa-bell-o fa-fw" aria-hidden="true"></i>Notification</a>
+                        <a href="<?=base_url();?>admin/notification" class="waves-effect"><i class="fa fa-bell-o fa-fw" aria-hidden="true"></i>Notification</a>
                     </li>
                     <li>
                         <a href="<?=base_url();?>admin/setting" class="waves-effect"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>Setting</a>

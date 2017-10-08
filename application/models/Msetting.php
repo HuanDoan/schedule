@@ -27,4 +27,20 @@ class Msetting extends MY_Model
 		$item  = $query->row();
 		return $item->Path;
 	}
+
+	public function getLastestMarquee(){
+		$query = $this->db->query("SELECT * FROM zzs_bottom_text ORDER BY ID DESC LIMIT 1");
+		$item  = $query->row();
+		return $item->Content;
+	}
+
+	public function insertMarquee($marquee){
+		$data = [
+			'Content' => $marquee,
+			'Status'  => 0
+		];
+
+		$this->db->insert('zzs_bottom_text', $data);
+		return $this->db->insert_id();
+	}
 }

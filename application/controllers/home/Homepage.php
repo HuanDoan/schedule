@@ -15,8 +15,14 @@ class Homepage extends Public_Controller
 	{
 		$this->load->model('mvideo');
 		$this->load->model('msetting');
+		$this->load->model('mnoti');
+		$this->load->model('mschedule');
+
 		$path = $this->msetting->getLastestBanner();
         $this->data['BannerLink'] = base_url().'/assets/users/files/'.$path;
+        $this->data['Marquee'] = $this->msetting->getLastestMarquee();
+        $this->data['NotiContent'] = $this->mnoti->getLastestNoti();
+
 		$this->data['Page_title'] = 'Homepage';
 
 		$this->data['VideoLink'] = $this->mvideo->getLatestVideo();

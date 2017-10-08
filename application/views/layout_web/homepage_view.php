@@ -12,58 +12,21 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="title_t">
-                            <h3><b>THÁNG 10 - 2017</b></h3>
+                            <h3>KẾ HOẠCH</h3>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="style_table">
-                            <table class="table">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                        <td width="200" class="text-center">Ngày</td>
+                                        <td class="text-center">Công việc</td>
+                                        <td class="text-center">Staff</td>
+                                </thead>
                                 <tbody>
-                                <tr>
-                                    <th><h1>02</h1></th>
-                                    <td>
-                                        <span>
-                                            Staff’s Name:<br>
-
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus. Praesent facilisis quam vel ipsum varius, nec facilisis nibh varius. Etiam molestie, augue et elementum scelerisque, neque quam accumsan urna, quis condimentum eros urna quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris mauris, pulvinar eget neque sit amet, posuere rhoncus ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec dignissim nisi ut nisl accumsan gravida.
-                                            <br>Deadline: 18/10/2017<br>
-                                            <br>Staff’s Name:<br>
-
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus. Praesent facilisis quam vel ipsum varius, nec facilisis nibh varius. Etiam molestie, augue et elementum scelerisque, neque quam accumsan urna, quis condimentum eros urna quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris mauris, pulvinar eget neque sit amet, posuere rhoncus ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec dignissim nisi ut nisl accumsan gravida.
-                                            <br>Deadline: <span style="color: red">18/10/2017</span>
-                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><h1>01</h1></td>
-                                                    <td>
-                                        <span>
-                                            Staff’s Name:<br>
-
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus. Praesent facilisis quam vel ipsum varius, nec facilisis nibh varius. Etiam molestie, augue et elementum scelerisque, neque quam accumsan urna, quis condimentum eros urna quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris mauris, pulvinar eget neque sit amet, posuere rhoncus ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec dignissim nisi ut nisl accumsan gravida.
-                                            <br>Deadline: 18/10/2017<br>
-                                            Staff’s Name:<br>
-
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus. Praesent facilisis quam vel ipsum varius, nec facilisis nibh varius. Etiam molestie, augue et elementum scelerisque, neque quam accumsan urna, quis condimentum eros urna quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris mauris, pulvinar eget neque sit amet, posuere rhoncus ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec dignissim nisi ut nisl accumsan gravida.
-                                            <br>Deadline: 18/10/2017<br>
-                                            Staff’s Name:<br>
-
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus. Praesent facilisis quam vel ipsum varius, nec facilisis nibh varius. Etiam molestie, augue et elementum scelerisque, neque quam accumsan urna, quis condimentum eros urna quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris mauris, pulvinar eget neque sit amet, posuere rhoncus ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec dignissim nisi ut nisl accumsan gravida.
-                                            <br>Deadline: 18/10/2017<br>
-                                             Staff’s Name:<br>
-
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus. Praesent facilisis quam vel ipsum varius, nec facilisis nibh varius. Etiam molestie, augue et elementum scelerisque, neque quam accumsan urna, quis condimentum eros urna quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris mauris, pulvinar eget neque sit amet, posuere rhoncus ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec dignissim nisi ut nisl accumsan gravida.
-                                            <br>Deadline: 18/10/2017<br>
-                                             Staff’s Name:<br>
-
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus. Praesent facilisis quam vel ipsum varius, nec facilisis nibh varius. Etiam molestie, augue et elementum scelerisque, neque quam accumsan urna, quis condimentum eros urna quis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris mauris, pulvinar eget neque sit amet, posuere rhoncus ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec dignissim nisi ut nisl accumsan gravida.
-                                            <br>Deadline: 18/10/2017<br>
-
-                                        </span>
-                                    </td>
-                                </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -84,24 +47,10 @@
                             </div>
                     </div>
                 </div>
-                <div class="line_hr">
-                    &nbsp;
-                </div>
                 <div class="row">
                     <div class="col-xs-12 col-lg-12">
                         <div class="noti_text">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus <br>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus. Integer interdum erat in massa eleifend posuere. Etiam luctus ipsum nisl, vitae malesuada libero ultricies vitae. Maecenas aliquam iaculis enim sit amet cursus.
-                                    </a>
-                                </li>
-                            </ul>
+                            <?=$NotiContent?>
                         </div>
                     </div>
                 </div>
@@ -111,8 +60,72 @@
     <div class="row">
         <div class="col-xs-12 col-md-12 col-lg-12">
             <div class="bg-white footer_body">
-                <div class="marquee"><h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at dapibus lacus.</h3></div>
+                <div class="marquee"><h3><?=$Marquee?></h3></div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    var AJAX_PATH_URL = '<?=base_url()?>admin/schedule/ajax';
+
+    $(document).ready(function(){
+        fetchTable();
+    });
+
+    function fetchTable(){
+        var html = '';
+        var span = '<span style="display: none;">';
+        var endspan = '</span>';
+
+        $.post(AJAX_PATH_URL,
+            {
+                option: 'fetchTable'
+            },
+            function(data){
+                for (var i = 0; i < data.length; i++) {
+                    html += '<tr>';
+                    html += '<td>'+parseDate(data[i].Date)+'</td><td>'+data[i].Content+span+data[i].ID+endspan+'</td><td>'+data[i].StaffName+span+data[i].ID+endspan+'</td>';
+                    html += '</tr>';
+                }
+                $('table tbody').html(html).promise().done(function(){
+                    var $rows = $('table tbody tr');
+                    var items = [],
+                        itemtext = [],
+                        currGroupStartIdx = 0;
+                    $rows.each(function(i) {
+                        var $this = $(this);
+                        var itemCell = $(this).find('td:eq(0)')
+                        var item = itemCell.text();
+                        itemCell.remove();
+                        if ($.inArray(item, itemtext) === -1) {
+                            itemtext.push(item);
+                            items.push([i, item]);
+                            groupRowSpan = 1;
+                            currGroupStartIdx = i;
+                            $this.data('rowspan', 1)
+                        } else {
+                            var rowspan = $rows.eq(currGroupStartIdx).data('rowspan') + 1;
+                            $rows.eq(currGroupStartIdx).data('rowspan', rowspan);
+                        }
+
+                    });
+
+
+
+                    $.each(items, function(i) {
+                        var $row = $rows.eq(this[0]);
+                        var rowspan = $row.data('rowspan');
+                        $row.prepend('<td rowspan="' + rowspan + '">' + this[1] + '</td>');
+                    });
+                });
+            }
+        );
+    }
+
+    function parseDate(date){
+        var d = date.split("-");
+        d = d[2]+"/"+d[1]+"/"+d[0];
+        return d;
+    }
+</script>

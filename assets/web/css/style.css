@@ -1,6 +1,6 @@
 body
 {
-    background-color: darkgray;
+    background-color: #e8e8e8;
 }
 
 .bg-white{
@@ -20,21 +20,39 @@ body
 .title_t{
     text-align: center;
     margin-bottom: 1px;
+    color: #28bfe5;
 }
 
-.col_left .style_table
+.title_t h3{
+    font-weight: 500;
+}
+
+.style_table
 {
     width: 100%;
+    padding: 20px;
+    max-height: 742px;
+    overflow-y: auto;
 }
 
 table {
     width: 100%;
 }
 
-tbody { display: block; }
 tbody {
     height: 724px;
     overflow-y: auto;
+}
+
+table thead td{
+    font-weight: 400;
+    background-color: #f8f8f8;
+    font-size: 20px;
+}
+
+tbody tr td{
+    vertical-align: middle !important;
+    font-size: 18px;
 }
 
 .col_right
@@ -53,10 +71,11 @@ tbody {
 }
 
 .col_right .noti .noti_titile{
-    margin-left: 15px;
     height: 45px;
     width: 100%;
-    border-bottom: 1px #000;
+    border-bottom: 1px solid #eee;
+    color: #28bfe5;
+    text-align: center;
 }
 
 .col_right .noti .line_hr{
@@ -66,8 +85,11 @@ tbody {
 }
 
 .col_right .noti .noti_text{
-    margin-left: 100px;
+    padding: 20px;
+    line-height: 22px;
     margin-top: 15px;
+    overflow-y: auto;
+    max-height: 300px;
 }
 
 .col_right .noti .noti_text a{
@@ -87,9 +109,15 @@ tbody {
     margin-top: 15px;
     padding-top: 5px;
     text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .marquee {
     overflow: hidden;
     width: 100%;
+}
+
+.marquee h3{
+    color: #28bfe5;
 }

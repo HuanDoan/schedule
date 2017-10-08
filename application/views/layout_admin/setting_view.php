@@ -63,6 +63,19 @@
                     <div class="col-xs-12">
                         <div class="white-box">
                             <h3 class="box-title">Setting bottom notice</h3>
+                            <form method="post" class="form-horizontal form-material" id="marqueeBottom">
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12">
+                                        <input type="text" name="marquee" id="Marquee" class="form-control form-control-line" required placeholder="<?=$currMarquee?>"> 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button type="button" id="SaveMarquee" class="btn btn-success">Save</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -74,6 +87,8 @@
         <!-- End Page Content -->
         <!-- ============================================================== -->
         <script>
+            var AJAX_PATH_URL = '<?=base_url()?>admin/setting/ajax';
+
             $(document).ready(function(){
                 $('#FileUploadForm').submit(function(e){
                         e.preventDefault();
@@ -100,6 +115,28 @@
                             } 
                         });
                     
+                });
+
+
+                $('#SaveMarquee').click(function(e){
+                    e.preventDefault();
+                    var content = $('#Marquee').val();
+                    if (content == '' || content == null) {
+                        confirm('Bạn chưa nhập nội dung!');
+                    }
+                    else{
+                        $.post(AJAX_PATH_URL,
+                            {
+                                option: 'marquee',
+                                marquee: content
+                            },
+                            function(data, status){
+                                data = $.parseJSON(data);
+                                alert(data['err']);
+                                window.location.href=window.location.href;
+                            }
+                        );
+                    }
                 });
             });
         </script>
